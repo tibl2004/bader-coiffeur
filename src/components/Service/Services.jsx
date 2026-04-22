@@ -5,7 +5,6 @@ import {
   faCut,
   faUser,
   faCrown,
-  faFire,
   faVenus,
   faMars,
   faClock
