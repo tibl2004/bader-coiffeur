@@ -1,0 +1,207 @@
+/* 🔥 Google Font (optional einfügen in index.html)
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+*/
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  backdrop-filter: blur(12px);
+  background: rgba(15, 15, 15, 0.85);
+  border-bottom: 1px solid rgba(197, 157, 95, 0.2);
+
+  font-family: "Poppins", sans-serif;
+
+  transition: all 0.3s ease;
+}
+
+/* Container */
+.navbar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 🔥 Logo */
+.logo-box {
+  display: flex;
+  align-items: center;
+
+  .logo {
+    height: 55px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(197, 157, 95, 0.3));
+  }
+
+  .logo-placeholder {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #c59d5f;
+
+    text-shadow: 0 0 10px rgba(197, 157, 95, 0.4);
+  }
+}
+
+/* 🍔 Burger */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+
+  &:hover {
+    color: #c59d5f;
+    transform: scale(1.1);
+  }
+}
+
+/* Navigation */
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+/* 🔥 Nav Links */
+.nav-link {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: all 0.3s ease;
+
+  .icon {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  /* 🔥 Hover Glow */
+  &:hover {
+    color: #c59d5f;
+  }
+
+  &:hover .icon {
+    transform: rotate(-10deg) scale(1.1);
+  }
+
+  /* 🔥 Underline Animation */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+
+    background: linear-gradient(90deg, #c59d5f, #e6c07b);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.active {
+    color: #c59d5f;
+  }
+
+  &.active::after {
+    width: 100%;
+  }
+}
+
+/* 💎 CTA Button */
+.nav-link.cta {
+  padding: 10px 18px;
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #c59d5f, #e6c07b);
+  color: #000;
+  font-weight: 600;
+
+  box-shadow: 0 5px 20px rgba(197, 157, 95, 0.4);
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(197, 157, 95, 0.6);
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+/* 🔐 Logout */
+.logout {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.3s;
+
+  &:hover {
+    color: #c59d5f;
+  }
+}
+
+/* 📱 MOBILE DESIGN */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-items {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    gap: 25px;
+
+    padding: 30px 0;
+
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(15px);
+
+    border-top: 1px solid rgba(197, 157, 95, 0.2);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: all 0.4s ease;
+
+    &.open {
+      max-height: 500px;
+    }
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,95 @@
+.login {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background: url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f")
+    center/cover no-repeat;
+}
+
+/* DARK OVERLAY */
+.login-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* BOX */
+.login-box {
+  position: relative;
+  z-index: 2;
+
+  width: 400px;
+  padding: 40px;
+
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(197, 157, 95, 0.2);
+  border-radius: 20px;
+
+  text-align: center;
+  backdrop-filter: blur(10px);
+
+  h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+
+    span {
+      color: #c59d5f;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    color: #bbb;
+    font-size: 14px;
+  }
+
+  form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input {
+    padding: 12px 15px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #fff;
+    outline: none;
+
+    transition: 0.3s;
+
+    &:focus {
+      border-color: #c59d5f;
+    }
+  }
+
+  button {
+    margin-top: 10px;
+
+    padding: 12px;
+    border-radius: 30px;
+
+    background: linear-gradient(135deg, #c59d5f, #e6c07b);
+    color: #000;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
